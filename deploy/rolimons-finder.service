@@ -1,0 +1,14 @@
+[Unit]
+Description=Rolimons Owner Finder
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/rolimons-owner-finder
+Environment=ALLOWED_ORIGINS=https://finder.usd.cheap,http://finder.usd.cheap
+ExecStart=/opt/rolimons-owner-finder/venv/bin/python -m uvicorn server:app --host 127.0.0.1 --port 8787 --limit-concurrency 64 --backlog 128 --timeout-keep-alive 5 --no-server-header
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

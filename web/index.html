@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolimons Owner Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 1094 1466" aria-hidden="true">
+          <path fill="currentColor" d="M1094 521.6 0 0v469.5l141-67.4 250 119.2L0 707.8v369.7l815.6 388.7L315 893l779-371.4z"/>
+        </svg>
+        <div>
+          <h1>Owner Finder</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel search-panel">
+        <div class="panel-head">
+          <h2>Предметы</h2>
+          <span class="hint">ID или ссылка Rolimons, минимум 2</span>
+        </div>
+
+        <div class="item-list" id="itemList"></div>
+
+        <div class="row">
+          <input
+            id="itemInput"
+            type="text"
+            placeholder="188004500 или https://www.rolimons.com/item/553970961"
+            autocomplete="off"
+          >
+          <button type="button" class="btn btn-secondary" id="addBtn">Добавить</button>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="btn btn-primary" id="searchBtn">
+            <span class="btn-label">Найти пересечение</span>
+            <span class="spinner hidden" id="spinner"></span>
+          </button>
+        </div>
+
+        <p class="error hidden" id="errorBox"></p>
+      </section>
+
+      <section class="panel results-panel hidden" id="resultsPanel">
+        <div class="summary-grid" id="summaryGrid"></div>
+
+        <div class="panel-head">
+          <h2>Результат</h2>
+          <span class="badge" id="matchBadge">0 игроков</span>
+        </div>
+
+        <div class="empty hidden" id="emptyState">
+          Нет игроков, у которых есть все указанные предметы.
+        </div>
+
+        <div class="table-wrap">
+          <table class="players-table hidden" id="playersTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Игрок</th>
+                <th>ID</th>
+                <th>Профили</th>
+              </tr>
+            </thead>
+            <tbody id="playersBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
