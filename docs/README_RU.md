@@ -1,15 +1,15 @@
-EN | [RU](docs/README_RU.md)
+[EN](../README.md) | RU
 
 # Rolimons Owner Finder
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 
 
-Web tool and API for finding Roblox players who own all specified Rolimons limited items.
+Веб-инструмент и API для поиска игроков Roblox, у которых есть все указанные limited с Rolimons.
 
 Production: https://finder.usd.cheap
 
-## Structure
+## Структура
 
 ```
 rolimons-owner-finder/
@@ -22,13 +22,13 @@ rolimons-owner-finder/
   deploy/            systemd and nginx templates
 ```
 
-## Local run
+## Локальный запуск
 
 ```bash
 ./run.sh
 ```
 
-Open http://127.0.0.1:8787
+Открой http://127.0.0.1:8787
 
 ## CLI
 
@@ -47,7 +47,7 @@ python3 cli.py 188004500 553971858 553970961 --json
 }
 ```
 
-## Deploy
+## Деплой
 
 ```bash
 rsync -av --exclude venv --exclude .git ./ user@host:/opt/rolimons-owner-finder/
@@ -64,6 +64,6 @@ ssh user@host '
 '
 ```
 
-## Environment
+## Переменные окружения
 
-- `ALLOWED_ORIGINS` comma-separated CORS origins
+- `ALLOWED_ORIGINS` - CORS origins через запятую
